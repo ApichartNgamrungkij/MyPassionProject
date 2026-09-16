@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+  <title>Hasunosora Call Guide</title>
+
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+
+  <header>
+    <h1 style="text-align: left;">Hasunosora Call Guide</h1>
+  </header>
+
+  <main>
+    <h2>Do! Do! Do!</h2>
+
+    <audio controls id="dododo" preload="auto">
+  <source src="/Music/dododo.wav" type="audio/wav">
+</audio>
+    <section class="paper" id="lyrics"></section>   
+    
+    <div class="timing-tool">
+  <h3>Timing Editor</h3>
+
+  <h2 id="currentTimeDisplay">0.000</h2>
+
+  <button id="captureTime">จับเวลาปัจจุบัน</button>
+
+  <input id="capturedTime" type="text" readonly
+         placeholder="เวลาที่จับได้">
+
+  <button id="copyTime">คัดลอกเวลา</button>
+</div>
+  </main>
+
+</body>
+</html>

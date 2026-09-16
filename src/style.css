@@ -1,0 +1,234 @@
+/* =====================================
+   GENERAL
+===================================== */
+
+body {
+  margin: 0;
+  background: #ffffff;
+  font-family: Arial, sans-serif;
+  color: #555555;
+}
+
+header {
+  background: #FA92A3;
+  color: white;
+  padding: 16px 30px;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 400;
+}
+
+main {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 0 24px;
+}
+
+h2 {
+  text-align: center;
+  font-size: 48px;
+  font-weight: 300;
+}
+
+
+/* =====================================
+   MUSIC PLAYER
+===================================== */
+
+audio {
+  display: block;
+  width: 70%;
+  margin: 30px auto 50px;
+}
+
+
+/* =====================================
+   LYRICS PAPER
+===================================== */
+
+.paper {
+  column-count: 3;
+  column-gap: 35px;
+  column-rule: 1px solid #dddddd;
+}
+
+.lyric {
+  margin: 0 0 12px;
+  line-height: 1.7;
+  font-size: 14px;
+  color: #555555;
+  break-inside: avoid;
+}
+
+/* Call ปกติ */
+.lyric.call {
+  color: #e76860;
+}
+
+
+/* =====================================
+   SYLLABLE BASE
+===================================== */
+
+.lyric .syllable {
+  color: inherit;
+  background: transparent;
+
+  text-shadow: none;
+  -webkit-text-stroke: 0;
+
+  cursor: pointer;
+
+  transition:
+    color 0.12s ease,
+    text-shadow 0.12s ease;
+}
+
+
+/* =====================================
+   ACTIVE — SOFT GLOW
+===================================== */
+
+/*
+  ตัวอักษรยังใช้สีเดิม
+  ไม่มีพื้นหลัง
+  ไม่มีขอบแข็ง
+  แสงฟุ้งจากสีของตัวละคร
+*/
+
+.lyric .syllable.active,
+.lyric.call .syllable.active {
+  color: inherit;
+
+  background: transparent;
+  -webkit-text-stroke: 0;
+
+  text-shadow: var(--active-glow, none);
+}
+
+
+/* =====================================
+   PASSED — FADED GLOW
+===================================== */
+
+/*
+  พยางค์ที่ร้องผ่านไปแล้ว
+  แสงค่อย ๆ จาง แต่ยังค้างอยู่
+*/
+
+/* พยางค์ที่ร้องผ่านไปแล้ว */
+.lyric .syllable.passed,
+.lyric.call .syllable.passed {
+  color: inherit;
+  background: transparent;
+
+  /* เงาสีตัวละครยังค้างอยู่ */
+  text-shadow: var(--passed-glow, none);
+
+  transition: text-shadow 0.15s ease;
+}
+
+
+/* =====================================
+   LINE FINISHED
+===================================== */
+
+/*
+  ร้องจบทั้งบรรทัด
+  ตัวอักษรกลายเป็นสีเทาจาง
+  แสงหายไปทั้งหมด
+*/
+
+.lyric.line-past .syllable,
+.lyric.call.line-past .syllable {
+  color: #b8b8b8;
+
+  background: transparent;
+  text-shadow: none;
+  -webkit-text-stroke: 0;
+}
+
+
+/* =====================================
+   HOVER
+===================================== */
+
+.lyric .syllable:hover {
+  text-decoration: underline;
+  text-decoration-color: #aaaaaa;
+  text-underline-offset: 3px;
+}
+
+
+/* =====================================
+   SONG INFORMATION
+===================================== */
+
+.song-info {
+  border: 1px solid #aaaaaa;
+  padding: 15px;
+  margin-bottom: 20px;
+  break-inside: avoid;
+}
+
+
+/* =====================================
+   TIMING EDITOR
+===================================== */
+
+.timing-tool {
+  margin: 50px auto;
+  padding: 20px;
+  text-align: center;
+
+  border-top: 1px solid #dddddd;
+}
+
+.timing-tool h2 {
+  font-family: monospace;
+  font-size: 32px;
+  color: #FA92A3;
+}
+
+.timing-tool button {
+  padding: 10px 15px;
+  cursor: pointer;
+}
+
+.timing-tool input {
+  padding: 10px;
+  width: 110px;
+  text-align: center;
+}
+
+
+/* =====================================
+   RESPONSIVE
+===================================== */
+
+@media (max-width: 900px) {
+  .paper {
+    column-count: 2;
+  }
+}
+
+@media (max-width: 768px) {
+  .paper {
+    column-count: 1;
+  }
+
+  audio {
+    width: 100%;
+  }
+
+  h2 {
+    font-size: 36px;
+  }
+
+  main {
+    padding: 0 16px;
+  }
+}
