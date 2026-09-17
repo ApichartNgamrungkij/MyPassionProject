@@ -48,10 +48,17 @@ const song = [
     colors: ["#e7609e"],
 
     syllables: [
-      { text: "Ho", start: 18.0 },
-      { text: "o", start: 18.2 },
-      { text: "mu ", start: 18.4 },
-      { text: "ran!!", start: 18.7 }
+      { text: "To", start: 17.792 },
+      { text: "ba", start: 17.978 },
+      { text: "su ", start: 18.024 },
+      { text: "ze! ", start: 18.185 },
+      { text: "Du ", start: 18.509 },
+      { text: "not", start: 18.979 },
+      { text: "to ", start: 19.264 },
+      { text: "wo", start: 19.522 },
+      { text: "o", start: 19.849 },
+      { text: "ri", start: 19.584 },
+      { text: "i", start: 18.4 },
     ],
 
     end: 19.2
